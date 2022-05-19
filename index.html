@@ -30,8 +30,8 @@
                     <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
-                <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                <span class="navbar-text" id="loginButton">
+                    <a>
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -44,7 +44,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="close" id="closeLogin">
                         &times;
                     </button>
                 </div>
@@ -81,7 +81,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="close" id="closeReserve">
                         &times;
                     </button>
                 </div>
@@ -195,8 +195,8 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a data-toggle="modal" data-target="#Reserve">
-                        <button type="submit" class="btn btn-warning btn-block">
+                    <a>
+                        <button type="submit" class="btn btn-warning btn-block" id="ReserveButton">
                             <strong>Reserve Table</strong>
                         </button>
                     </a>
@@ -360,7 +360,22 @@
                     $('#carouselButton').children('span').addClass('fa-pause');
                 }
             });
+            $('#loginButton').click(function() {
+                $('#loginModal').modal('show')
+            })
+            $('#ReserveButton').click(function() {
+                $('#Reserve').modal('show')
+            })
+            $('#closeReserve').click(function() {
+                $('#Reserve').modal('hide')
+            })
+            $('#closeLogin').click(function() {
+                $('#loginModal').modal('hide')
+            })
         });
+    </script>
+    <script>
+
     </script>
 </body>
 
